@@ -291,9 +291,7 @@ open class Service: NSObject
       - SeeAlso: `ResponseContentTransformer`
           for more robust transformation options.
     */
-    public final func configureTransformer<I, O>(
-            _ pattern: ConfigurationPatternConvertible,
-            requestMethods: [RequestMethod]? = nil,
+    public final func configureTransformer<I, O>(_ pattern: ConfigurationPatternConvertible,requestMethods: [RequestMethod]? = nil,
             atStage stage: PipelineStageKey = .model,
             action: PipelineStage.MutationAction = .replaceExisting,
             onInputTypeMismatch mismatchAction: InputTypeMismatchAction = .error,

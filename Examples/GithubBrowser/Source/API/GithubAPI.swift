@@ -79,8 +79,7 @@ class _GitHubAPI {
         }
 
         service.configureTransformer("/search/repositories") {
-            try jsonDecoder.decode(SearchResults<Repository>.self, from: $0.content)
-                .items
+            try jsonDecoder.decode(SearchResults<Repository>.self, from: $0.content).items
         }
 
         service.configureTransformer("/repos/*/*") {
